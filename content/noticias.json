@@ -1,0 +1,7 @@
+{
+  "posts": [
+    { "tag": "Notícia", "title": "Espaço reservado para novidades da área da psicologia" },
+    { "tag": "Conhecimento", "title": "Espaço reservado para conteúdo explicativo sobre saúde mental" },
+    { "tag": "Conhecimento", "title": "Espaço reservado para dúvidas comuns sobre terapia" }
+  ]
+}

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Marcos Gonçalves | Psicólogo — Viver Bem Psico</title>
+<meta name="description" content="Dr. Marcos Gonçalves, psicólogo CRP 13/13951. Atendimento clínico com Terapia Cognitivo-Comportamental e Avaliação Neuropsicológica.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='49' fill='%23173250'/%3E%3Ctext x='50' y='63' text-anchor='middle' font-family='Georgia,serif' font-size='42' font-weight='700' fill='%23af8a3f'%3E%CE%A8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-deep:#173250;
+    --blue-mid:#2c5a80;
+    --blue-soft:#e8eff4;
+    --gold:#af8a3f;
+    --gold-soft:#f2e9d8;
+    --bg:#ffffff;
+    --bg-warm:#f7f5f0;
+    --ink:#1c2830;
+    --ink-muted:#5c6b74;
+    --line:#e2e2df;
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Mulish', sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Lora', serif;
+    font-weight:600;
+    color:var(--blue-deep);
+    line-height:1.25;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
+  section{padding:96px 0;}
+  @media (max-width:720px){ section{padding:64px 0;} }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:78px;
+  }
+  .brand{
+    font-family:'Lora', serif; font-weight:600; font-size:1.15rem;
+    color:var(--blue-deep); display:flex; align-items:center; gap:10px;
+  }
+  .brand .mark{
+    width:34px; height:34px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{
+    font-size:0.94rem; color:var(--ink); font-weight:600;
+    padding:6px 0; border-bottom:2px solid transparent;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .nav-links a:hover{border-color:var(--gold); color:var(--blue-deep);}
+  .nav-cta{
+    background:var(--blue-deep); color:#fff !important;
+    padding:11px 22px; border-radius:var(--radius);
+    font-weight:700; font-size:0.9rem;
+  }
+  .nav-cta:hover{background:var(--blue-mid);}
+  .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:8px;}
+  .nav-toggle span{display:block; width:24px; height:2px; background:var(--blue-deep); margin:5px 0;}
+  @media (max-width:860px){
+    .nav-links{
+      position:absolute; top:78px; left:0; right:0; background:#fff;
+      flex-direction:column; align-items:flex-start; gap:0;
+      border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden; transition:max-height .25s ease;
+    }
+    .nav-links.open{max-height:400px;}
+    .nav-links a{width:100%; padding:16px 28px; border-bottom:1px solid var(--line); border-radius:0;}
+    .nav-links .nav-cta{margin:16px 28px; display:inline-block; width:calc(100% - 56px); text-align:center;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(180deg, var(--blue-soft) 0%, #ffffff 100%);
+    padding:88px 0 96px;
+  }
+  .hero .wrap{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;}
+  @media (max-width:860px){ .hero .wrap{grid-template-columns:1fr;} }
+  .eyebrow{
+    color:var(--gold); font-weight:700; font-size:0.85rem;
+    letter-spacing:0.03em; margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:2.6rem; margin-bottom:22px; max-width:14ch;
+  }
+  @media (max-width:720px){ .hero h1{font-size:2rem;} }
+  .hero p{
+    color:var(--ink-muted); font-size:1.08rem; max-width:46ch; margin-bottom:30px;
+  }
+  .btn-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px; border-radius:var(--radius);
+    font-weight:700; font-size:0.95rem;
+    transition:transform .15s ease, background .2s ease;
+  }
+  .btn-primary{background:var(--gold); color:#fff;}
+  .btn-primary:hover{background:#96742f;}
+  .btn-outline{border:1.5px solid var(--blue-deep); color:var(--blue-deep);}
+  .btn-outline:hover{background:var(--blue-deep); color:#fff;}
+  .hero-card{
+    background:#fff; border:1px solid var(--line);
+    border-radius:6px; padding:36px;
+    box-shadow:0 20px 50px -25px rgba(23,50,80,0.35);
+  }
+  .avatar{
+    width:88px; height:88px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:20px;
+  }
+  .hero-card h3{font-size:1.3rem; margin-bottom:4px;}
+  .hero-card .crp{color:var(--ink-muted); font-size:0.9rem; margin-bottom:18px;}
+  .hero-card ul{list-style:none;}
+  .hero-card li{
+    display:flex; gap:10px; align-items:flex-start;
+    font-size:0.94rem; color:var(--ink); padding:8px 0;
+    border-top:1px solid var(--line);
+  }
+  .hero-card li:first-of-type{border-top:none;}
+  .dot{color:var(--gold); font-weight:800;}
+
+  /* ---------- SECTION HEADS ---------- */
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head h2{font-size:2rem;}
+  .section-head p{color:var(--ink-muted); margin-top:14px; font-size:1.02rem;}
+
+  /* ---------- SOBRE ---------- */
+  .sobre .wrap{display:block;}
+  .sobre-header{display:flex; align-items:center; gap:18px; margin-bottom:32px;}
+  .sobre-photo{
+    width:132px; height:132px; border-radius:50%;
+    overflow:hidden; flex-shrink:0; border:2px solid var(--blue-soft);
+  }
+  .sobre-text{max-width:70ch;}
+  .sobre-text p{margin-bottom:18px; color:var(--ink); font-size:1.03rem;}
+  .sobre-facts{
+    display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:28px;
+  }
+  .fact{
+    border-left:3px solid var(--gold); padding:6px 0 6px 16px;
+  }
+  .fact .label{font-size:0.78rem; color:var(--ink-muted); font-weight:700; text-transform:uppercase; letter-spacing:.03em;}
+  .fact .val{font-size:0.98rem; font-weight:600; margin-top:3px;}
+
+  /* ---------- SERVICOS ---------- */
+  .servicos{background:var(--bg-warm);}
+  .cards3{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media (max-width:860px){ .cards3{grid-template-columns:1fr;} }
+  .card{
+    background:#fff; border:1px solid var(--line); border-radius:6px;
+    padding:32px 28px;
+  }
+  .card .num{
+    font-family:'Lora', serif; color:var(--gold); font-size:1.1rem;
+    font-weight:600; margin-bottom:16px;
+  }
+  .card h3{font-size:1.2rem; margin-bottom:10px;}
+  .card p{color:var(--ink-muted); font-size:0.96rem;}
+
+  /* ---------- BLOG ---------- */
+  .blog-head-row{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:52px; gap:24px; flex-wrap:wrap;}
+  .blog-head-row .section-head{margin-bottom:0;}
+  .cards-blog{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media (max-width:860px){ .cards-blog{grid-template-columns:1fr;} }
+  .post{border:1px solid var(--line); border-radius:6px; overflow:hidden; background:#fff; display:flex; flex-direction:column;}
+  .post-thumb{
+    height:150px; background:linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
+    display:flex; align-items:flex-end; padding:16px;
+  }
+  .post-thumb span{
+    color:var(--gold-soft); font-size:0.72rem; font-weight:700;
+    text-transform:uppercase; letter-spacing:.03em;
+  }
+  .post-body{padding:22px; display:flex; flex-direction:column; gap:10px; flex:1;}
+  .post-body h4{font-size:1.05rem;}
+  .post-body p{color:var(--ink-muted); font-size:0.9rem; flex:1;}
+  .post-body .read{color:var(--blue-mid); font-weight:700; font-size:0.85rem;}
+  .blog-note{
+    margin-top:28px; font-size:0.85rem; color:var(--ink-muted);
+    border-top:1px dashed var(--line); padding-top:18px;
+  }
+
+  /* ---------- NOTICIAS ---------- */
+  .noticias{background:var(--blue-deep); color:#fff;}
+  .noticias .section-head h2{color:#fff;}
+  .noticias .section-head p{color:rgba(255,255,255,0.7);}
+  .news-list{display:grid; grid-template-columns:1fr; gap:1px; background:rgba(255,255,255,0.15); border-radius:6px; overflow:hidden;}
+  .news-item{
+    background:var(--blue-deep); padding:24px 28px;
+    display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;
+  }
+  .news-item .tag{
+    display:inline-block; background:var(--gold); color:#fff;
+    font-size:0.7rem; font-weight:700; padding:4px 10px; border-radius:20px;
+    text-transform:uppercase; letter-spacing:.03em; margin-bottom:8px;
+  }
+  .news-item h4{color:#fff; font-size:1.05rem; font-weight:600; font-family:'Lora',serif;}
+  .news-item .read{color:var(--gold-soft); font-weight:700; font-size:0.85rem; flex-shrink:0;}
+  .noticias-note{
+    margin-top:24px; font-size:0.85rem; color:rgba(255,255,255,0.55);
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    padding:22px 0; display:flex; justify-content:space-between; align-items:center;
+    gap:20px; font-family:'Lora', serif; font-size:1.05rem; font-weight:600; color:var(--blue-deep);
+  }
+  .faq-q .plus{
+    font-size:1.4rem; color:var(--gold); font-weight:400; flex-shrink:0;
+    transition:transform .2s ease;
+  }
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{
+    max-height:0; overflow:hidden; transition:max-height .25s ease;
+    color:var(--ink-muted); font-size:0.97rem;
+  }
+  .faq-a-inner{padding-bottom:22px; max-width:70ch;}
+  .faq-item.open .faq-a{max-height:220px;}
+
+  /* ---------- CONTATO ---------- */
+  .contato{background:var(--bg-warm);}
+  .contato .wrap{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  @media (max-width:860px){ .contato .wrap{grid-template-columns:1fr;} }
+  .contact-card{
+    background:#fff; border:1px solid var(--line); border-radius:6px; padding:36px;
+  }
+  .contact-card h3{font-size:1.15rem; margin-bottom:6px;}
+  .contact-row{
+    display:flex; align-items:center; gap:14px; padding:16px 0;
+    border-top:1px solid var(--line);
+  }
+  .contact-row:first-of-type{border-top:none;}
+  .contact-row .ic{
+    width:38px; height:38px; border-radius:50%; background:var(--blue-soft);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    color:var(--blue-deep); font-weight:700; font-size:0.9rem;
+  }
+  .contact-row .txt .label{font-size:0.78rem; color:var(--ink-muted); font-weight:700; text-transform:uppercase;}
+  .contact-row .txt .val{font-size:0.98rem; font-weight:600;}
+  .contact-row .txt a{color:var(--blue-mid);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--blue-deep); color:rgba(255,255,255,0.7); padding:44px 0 28px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  footer .brand-f{color:#fff; font-family:'Lora', serif; font-weight:600; font-size:1.05rem;}
+  footer .fine{font-size:0.82rem;}
+  footer .fine a{text-decoration:underline;}
+
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .wa-float{
+    position:fixed; bottom:24px; right:24px; z-index:60;
+    background:#1f7a4d; color:#fff; width:56px; height:56px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px -8px rgba(31,122,77,0.6);
+    font-size:1.4rem;
+  }
+</style>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo-mark" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="49" fill="#173250"/>
+      <circle cx="50" cy="50" r="45.5" fill="none" stroke="#af8a3f" stroke-width="1"/>
+      <g fill="none" stroke="#af8a3f" stroke-width="1.6" stroke-linecap="round">
+        <path d="M39 66 Q30 57 32 47 Q34 37 43 30"/>
+      </g>
+      <g fill="#af8a3f">
+        <ellipse cx="34" cy="60" rx="4.2" ry="2.1" transform="rotate(-38 34 60)"/>
+        <ellipse cx="31" cy="52" rx="4.2" ry="2.1" transform="rotate(-14 31 52)"/>
+        <ellipse cx="31.5" cy="44" rx="4.2" ry="2.1" transform="rotate(12 31.5 44)"/>
+        <ellipse cx="35.5" cy="37" rx="4.2" ry="2.1" transform="rotate(36 35.5 37)"/>
+        <ellipse cx="41.5" cy="32" rx="4.2" ry="2.1" transform="rotate(58 41.5 32)"/>
+      </g>
+      <g transform="translate(100,0) scale(-1,1)">
+        <path d="M39 66 Q30 57 32 47 Q34 37 43 30" fill="none" stroke="#af8a3f" stroke-width="1.6" stroke-linecap="round"/>
+        <g fill="#af8a3f">
+          <ellipse cx="34" cy="60" rx="4.2" ry="2.1" transform="rotate(-38 34 60)"/>
+          <ellipse cx="31" cy="52" rx="4.2" ry="2.1" transform="rotate(-14 31 52)"/>
+          <ellipse cx="31.5" cy="44" rx="4.2" ry="2.1" transform="rotate(12 31.5 44)"/>
+          <ellipse cx="35.5" cy="37" rx="4.2" ry="2.1" transform="rotate(36 35.5 37)"/>
+          <ellipse cx="41.5" cy="32" rx="4.2" ry="2.1" transform="rotate(58 41.5 32)"/>
+        </g>
+      </g>
+      <text x="50" y="61" text-anchor="middle" font-family="Lora, serif" font-size="32" font-weight="600" fill="#af8a3f">&#936;</text>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <nav class="wrap">
+    <div class="brand"><span class="mark"><svg viewBox="0 0 100 100" width="100%" height="100%"><use href="#logo-mark"/></svg></span> Viver Bem Psico</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Abordagem</a>
+      <a href="#blog">Blog</a>
+      <a href="#noticias">Notícias</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#contato">Contato</a>
+      <a class="nav-cta" href="https://wa.me/5583986920749" target="_blank" rel="noopener">Agendar consulta</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">PSICOLOGIA CLÍNICA</div>
+      <h1>Cuidar da mente começa com um espaço seguro para falar</h1>
+      <p>Atendimento psicológico com o Dr. Marcos Gonçalves, baseado em Terapia Cognitivo-Comportamental e Avaliação Neuropsicológica, com escuta técnica e acolhedora.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://wa.me/5583986920749" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        <a class="btn btn-outline" href="#sobre">Conhecer o Dr. Marcos</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="avatar"><svg viewBox="0 0 100 100" width="72%" height="72%"><use href="#logo-mark"/></svg></div>
+      <h3>Dr. Marcos Gonçalves</h3>
+      <div class="crp">Psicólogo — CRP 13/13951</div>
+      <ul>
+        <li><span class="dot">•</span> Formação em Psicologia — UEPB/UNIFACISA</li>
+        <li><span class="dot">•</span> Pós-graduação em Avaliação Neuropsicológica</li>
+        <li><span class="dot">•</span> Atuação com Terapia Cognitivo-Comportamental (TCC)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="wrap">
+    <div class="sobre-header">
+      <div class="sobre-photo"><img src="img/marcos-goncalves.png" alt="Dr. Marcos Gonçalves, psicólogo" style="width:100%; height:100%; object-fit:cover;"></div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:4px;">SOBRE</div>
+        <h2 style="font-size:1.6rem;">Dr. Marcos Gonçalves</h2>
+      </div>
+    </div>
+    <div class="sobre-text">
+      <p>Psicólogo formado pela UEPB/UNIFACISA, com pós-graduação em Avaliação Neuropsicológica. Atua com Terapia Cognitivo-Comportamental (TCC), abordagem com respaldo científico voltada para o manejo de pensamentos, emoções e comportamentos.</p>
+      <p>Este espaço reúne atendimento clínico e conteúdo sobre saúde mental, com o objetivo de aproximar a psicologia do dia a dia das pessoas.</p>
+      <div class="sobre-facts">
+        <div class="fact"><div class="label">Registro</div><div class="val">CRP 13/13951</div></div>
+        <div class="fact"><div class="label">Formação</div><div class="val">UEPB/UNIFACISA</div></div>
+        <div class="fact"><div class="label">Pós-graduação</div><div class="val">Avaliação Neuropsicológica</div></div>
+        <div class="fact"><div class="label">Abordagem</div><div class="val">Terapia Cognitivo-Comportamental</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ATUAÇÃO</div>
+      <h2>Como funciona o acompanhamento</h2>
+      <p>Áreas de atuação do Dr. Marcos. Os detalhes de formato de atendimento e valores são combinados diretamente no primeiro contato.</p>
+    </div>
+    <div class="cards3">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>Terapia Individual (TCC)</h3>
+        <p>Acompanhamento psicológico baseado em Terapia Cognitivo-Comportamental, voltado para ansiedade, questões emocionais e desenvolvimento pessoal.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>Avaliação Neuropsicológica</h3>
+        <p>Processo de avaliação das funções cognitivas, com base na formação de pós-graduação do Dr. Marcos na área.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>Orientação e Escuta Clínica</h3>
+        <p>Espaço de escuta profissional para organizar questões pessoais, familiares ou emocionais em andamento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog" id="blog">
+  <div class="wrap">
+    <div class="blog-head-row">
+      <div class="section-head">
+        <div class="eyebrow">BLOG</div>
+        <h2>Conteúdo sobre saúde mental</h2>
+        <p>Textos e novidades sobre psicologia, publicados periodicamente neste espaço.</p>
+      </div>
+    </div>
+    <div class="cards-blog">
+      <div class="post">
+        <div class="post-thumb"><span>TCC</span></div>
+        <div class="post-body">
+          <h4>O que é Terapia Cognitivo-Comportamental?</h4>
+          <p>Um panorama sobre como a TCC trabalha a relação entre pensamentos, emoções e comportamentos.</p>
+          <div class="read">Em breve →</div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="post-thumb"><span>AVALIAÇÃO</span></div>
+        <div class="post-body">
+          <h4>Para que serve a avaliação neuropsicológica?</h4>
+          <p>Entenda quando esse processo é indicado e o que ele avalia.</p>
+          <div class="read">Em breve →</div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="post-thumb"><span>SAÚDE MENTAL</span></div>
+        <div class="post-body">
+          <h4>Sinais de que pode ser hora de buscar terapia</h4>
+          <p>Alguns pontos de atenção sobre bem-estar emocional no dia a dia.</p>
+          <div class="read">Em breve →</div>
+        </div>
+      </div>
+    </div>
+    <p class="blog-note">Estes são títulos de exemplo para organizar o espaço do blog. Assim que o Dr. Marcos definir os artigos reais, o conteúdo é atualizado aqui.</p>
+  </div>
+</section>
+
+<section class="noticias" id="noticias">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:#f2e9d8">NOTÍCIAS</div>
+      <h2>Notícias e conhecimento sobre psicologia</h2>
+      <p>Espaço com novidades da área e conteúdo para entender melhor temas de saúde mental.</p>
+    </div>
+    <div class="news-list">
+      <div class="news-item">
+        <div><span class="tag">Notícia</span><h4>Espaço reservado para novidades da área da psicologia</h4></div>
+        <div class="read">Em breve →</div>
+      </div>
+      <div class="news-item">
+        <div><span class="tag">Conhecimento</span><h4>Espaço reservado para conteúdo explicativo sobre saúde mental</h4></div>
+        <div class="read">Em breve →</div>
+      </div>
+      <div class="news-item">
+        <div><span class="tag">Conhecimento</span><h4>Espaço reservado para dúvidas comuns sobre terapia</h4></div>
+        <div class="read">Em breve →</div>
+      </div>
+    </div>
+    <p class="noticias-note">Estes são espaços de exemplo. Assim que o Dr. Marcos definir as notícias e textos reais, o conteúdo é publicado aqui.</p>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">DÚVIDAS FREQUENTES</div>
+      <h2>Perguntas comuns</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">O que é Terapia Cognitivo-Comportamental (TCC)?<span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">É uma abordagem psicológica que trabalha a relação entre pensamentos, emoções e comportamentos, com foco em estratégias práticas para lidar com dificuldades do presente.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">O que avalia uma Avaliação Neuropsicológica?<span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Avalia funções cognitivas como memória, atenção e raciocínio, ajudando a entender melhor o funcionamento cognitivo de uma pessoa.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Como faço para agendar uma consulta?<span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Pelo WhatsApp (83) 98692-0749 ou pelo e-mail marcosgoncalvespsic@gmail.com.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">O atendimento é online ou presencial?<span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">O atendimento pode ser online ou presencial, mediante agendamento prévio.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">CONTATO</div>
+      <h2>Vamos conversar</h2>
+      <p style="color:var(--ink-muted); margin-top:14px; max-width:46ch;">Entre em contato pelo WhatsApp ou e-mail para tirar dúvidas ou agendar sua consulta com o Dr. Marcos Gonçalves.</p>
+      <div class="btn-row" style="margin-top:28px;">
+        <a class="btn btn-primary" href="https://wa.me/5583986920749" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <h3>Informações de contato</h3>
+      <div class="contact-row">
+        <div class="ic">@</div>
+        <div class="txt"><div class="label">E-mail</div><div class="val"><a href="mailto:marcosgoncalvespsic@gmail.com">marcosgoncalvespsic@gmail.com</a></div></div>
+      </div>
+      <div class="contact-row">
+        <div class="ic">W</div>
+        <div class="txt"><div class="label">WhatsApp</div><div class="val"><a href="https://wa.me/5583986920749" target="_blank" rel="noopener">(83) 98692-0749</a></div></div>
+      </div>
+      <div class="contact-row">
+        <div class="ic">CRP</div>
+        <div class="txt"><div class="label">Registro profissional</div><div class="val">CRP 13/13951</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand-f" style="display:flex; align-items:center; gap:10px;">
+      <svg viewBox="0 0 100 100" width="30" height="30" style="flex-shrink:0;"><use href="#logo-mark"/></svg>
+      Viver Bem Psico
+    </div>
+    <div class="fine">Dr. Marcos Gonçalves — CRP 13/13951 · <a href="mailto:marcosgoncalvespsic@gmail.com">marcosgoncalvespsic@gmail.com</a></div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5583986920749" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">W</a>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+
+  function escapeHtml(str){
+    return (str || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+  async function loadJSON(path){
+    try{
+      const res = await fetch(path, {cache:"no-store"});
+      if(!res.ok) return null;
+      return await res.json();
+    }catch(e){ return null; }
+  }
+  (async function(){
+    const blogData = await loadJSON('/content/blog.json');
+    if(blogData && Array.isArray(blogData.posts) && blogData.posts.length){
+      const grid = document.querySelector('.cards-blog');
+      if(grid){
+        grid.innerHTML = blogData.posts.map(p => `
+          <div class="post">
+            <div class="post-thumb"><span>${escapeHtml((p.tag||'').toUpperCase())}</span></div>
+            <div class="post-body">
+              <h4>${escapeHtml(p.title)}</h4>
+              <p>${escapeHtml(p.description)}</p>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+    const newsData = await loadJSON('/content/noticias.json');
+    if(newsData && Array.isArray(newsData.posts) && newsData.posts.length){
+      const list = document.querySelector('.news-list');
+      if(list){
+        list.innerHTML = newsData.posts.map(p => `
+          <div class="news-item">
+            <div><span class="tag">${escapeHtml(p.tag||'Notícia')}</span><h4>${escapeHtml(p.title)}</h4></div>
+          </div>
+        `).join('');
+      }
+    }
+  })();
+</script>
+</body>
+</html>

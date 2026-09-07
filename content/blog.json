@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "tag": "TCC",
+      "title": "O que é Terapia Cognitivo-Comportamental?",
+      "description": "Um panorama sobre como a TCC trabalha a relação entre pensamentos, emoções e comportamentos."
+    },
+    {
+      "tag": "Avaliação",
+      "title": "Para que serve a avaliação neuropsicológica?",
+      "description": "Entenda quando esse processo é indicado e o que ele avalia."
+    },
+    {
+      "tag": "Saúde mental",
+      "title": "Sinais de que pode ser hora de buscar terapia",
+      "description": "Alguns pontos de atenção sobre bem-estar emocional no dia a dia."
+    }
+  ]
+}
